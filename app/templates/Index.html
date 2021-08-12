@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bahadır Büber</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="/index">Product List</a>
+            <a href="/create">Input Link</a>
+        </div>
+        <table>
+            <tr>
+                <th>
+                    Product Id
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Product Image
+                </th>
+                <th>
+                    Product Price
+                </th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>
+                    {{product[0]}}
+                </td>
+                <td>
+                    {{product[1]}}
+                </td>
+                <td>
+                    {{product[2]}}
+                </td>
+                <td>
+                    {{product[3]}}
+                </td>
+                <td>
+                    <form action = '/details', method="POST">
+                        <input type="hidden" name="id" value={{product[0]}}>
+                        <input value="Details" id="details" name="details" type="submit">
+                    </form>
+                </td>
+            </tr>
+
+        {% endfor %}
+        </table>        
+    </body>
+</html>
