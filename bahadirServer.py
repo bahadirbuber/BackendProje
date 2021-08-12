@@ -1,4 +1,4 @@
-from deneme import deneme
+from fetchData import fetchData
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
